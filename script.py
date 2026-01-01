@@ -36,9 +36,10 @@ def rodar_automacao():
         })
 
     df = pd.DataFrame(noticias_lista)
-    # Salva com nome fixo para o GitHub atualizar o mesmo arquivo
-    df.to_csv("noticias_receita.csv", index=False, encoding='utf-8')
-    print("Planilha atualizada com sucesso!")
+    
+    # SALVAR COMO CSV (Mais fácil para o Google Sheets ler)
+    df.to_csv("noticias_receita.csv", index=False, encoding='utf-8-sig')
+    print("Arquivo CSV atualizado!")
 
 if __name__ == "__main__":
     rodar_automacao()
