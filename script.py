@@ -42,12 +42,12 @@ def rodar_automacao():
 
                 # Lógica de Categorização (Agyle BPO)
                 txt = titulo.upper()
-               if any(w in txt for w in ["IRPF", "LUCROS E DIVIDENDOS", "INSS", "PESSOA FÍSICA"]):
-                  categoria = "Pessoa Física"
-               elif any(w in txt for w in ["ICMS", "PIS", "COFINS", "IRPJ", "CSLL", "SIMPLES NACIONAL", "ISS", "IBS", "CBS", "eSocial", "EMPRESA"]):
-                  categoria = "Empresarial"
-               else:
-                  categoria = "Geral"
+                if any(w in txt for w in ["IRPF", "LUCROS E DIVIDENDOS", "INSS", "PESSOA FÍSICA"]):
+                    categoria = "Pessoa Física"
+                elif any(w in txt for w in ["ICMS", "PIS", "COFINS", "IRPJ", "CSLL", "SIMPLES NACIONAL", "ISS", "IBS", "CBS", "eSocial", "EMPRESA"]):
+                    categoria = "Empresarial"
+                else:
+                    categoria = "Geral"
 
                 noticias_totais.append({
                     "Fonte": url.split('/')[2], # Extrai o domínio do site (ex: gov.br)
