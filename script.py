@@ -37,7 +37,7 @@ def rodar_automacao():
 
     df = pd.DataFrame(noticias_lista)
     # Salva com nome fixo para o GitHub atualizar o mesmo arquivo
-    df.to_excel("noticias_receita.xlsx", index=False)
+    df.to_csv("noticias_receita.csv", index=False, encoding='utf-8')
     print("Planilha atualizada com sucesso!")
 
 if __name__ == "__main__":
