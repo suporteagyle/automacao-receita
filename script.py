@@ -23,7 +23,7 @@ def rodar_automacao():
         txt = titulo.upper()
         if any(w in txt for w in ["IRPF", "LUCROS E DIVIDENDOS", "INSS", "PESSOA FÍSICA"]):
             categoria = "Pessoa Física"
-        elif any(w in txt for w in ["ICMS", "PIS", "COFINS", "IRPJ", "CSLL", "SIMPLES NACIONAL", "ISS", "IBS", "CBS", "EMPRESA"]):
+        elif any(w in txt for w in ["ICMS", "PIS", "COFINS", "IRPJ", "CSLL", "SIMPLES NACIONAL", "ISS", "IBS", "CBS", "eSocial", "EMPRESA"]):
             categoria = "Empresarial"
         else:
             categoria = "Geral"
