@@ -6,6 +6,9 @@ from datetime import datetime
 
 def rodar_automacao():
     url = "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/ultimas-noticias"
+    url = "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/ultimas-noticias?b_start:int=30"
+    url = "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/ultimas-noticias?b_start:int=60"
+    url = "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/ultimas-noticias?b_start:int=90"
     headers = {'User-Agent': 'Mozilla/5.0'}
     response = requests.get(url, headers=headers)
     soup = BeautifulSoup(response.text, 'html.parser')
