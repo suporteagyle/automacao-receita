@@ -28,5 +28,5 @@ jobs:
       - name: Salvar alteracoes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "Atualização automática: ${{ github.event.head_commit.timestamp }}"
-          file_pattern: "noticias_receita.csv"
+          commit_message: "Atualização automática CSV"
+          file_pattern: "noticias_receita.csv" # Mude aqui para .csv
