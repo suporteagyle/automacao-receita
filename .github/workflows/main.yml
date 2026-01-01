@@ -2,7 +2,7 @@ name: Atualizar Planilha Diaria
 
 on:
   schedule:
-    - cron: '0 11 * * *' # Roda todo dia às 08:00 (Horário de Brasília)
+    - cron: '0 9 * * *' # Roda todo dia às 06:00 (Horário de Brasília)
   workflow_dispatch: # Permite que você rode manualmente quando quiser
 
 jobs:
