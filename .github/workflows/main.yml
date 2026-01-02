@@ -24,7 +24,7 @@ jobs:
         run: pip install requests beautifulsoup4 pandas
 
       - name: Executar script
-        run: python seu_arquivo.py  # <--- CONFIRME O NOME DO SEU ARQUIVO AQUI
+        run: python script.py  # <--- CONFIRME O NOME DO SEU ARQUIVO AQUI
 
       - name: Salvar alteracoes
         uses: stefanzweifel/git-auto-commit-action@v4
