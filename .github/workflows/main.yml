@@ -29,4 +29,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "Atualização automática: ${{ github.event.head_commit.timestamp }}"
-          file_pattern: "noticias_receita.xlsx"
+          file_pattern: "noticias_receita.csv"
