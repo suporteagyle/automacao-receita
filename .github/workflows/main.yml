@@ -2,14 +2,15 @@ name: Atualizar Planilha Diaria
 
 on:
   schedule:
-    - cron: '0 11 * * *' # Roda todo dia às 08:00 (Horário de Brasília)
-  workflow_dispatch: # Permite que você rode manualmente quando quiser
+    # Programado para 10:45 UTC (07:45 Brasília) para compensar atrasos
+    - cron: '45 10 * * *' 
+  workflow_dispatch: 
 
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Permissão para o robô salvar o arquivo no seu GitHub
+      contents: write
     steps:
       - name: Checkout do código
         uses: actions/checkout@v3
@@ -20,13 +21,13 @@ jobs:
           python-version: '3.9'
 
       - name: Instalar dependencias
-        run: pip install requests beautifulsoup4 pandas openpyxl
+        run: pip install requests beautifulsoup4 pandas
 
       - name: Executar script
-        run: python script.py
+        run: python seu_arquivo.py  # <--- CONFIRME O NOME DO SEU ARQUIVO AQUI
 
       - name: Salvar alteracoes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "Atualização automática: ${{ github.event.head_commit.timestamp }}"
+          commit_message: "Atualização automática da planilha"
           file_pattern: "noticias_receita.csv"
