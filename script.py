@@ -65,6 +65,3 @@ def rodar_automacao():
     # 3. SALVAR EM CSV
     df.to_csv("noticias_receita.csv", index=False, encoding='utf-8-sig')
     print(f"✅ Sucesso! {len(df)} notícias consolidadas no arquivo.")
-
-if __name__ == "__main__":
-    rodar_automacao()
