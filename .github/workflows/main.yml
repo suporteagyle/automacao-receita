@@ -2,9 +2,8 @@ name: Atualizar Planilha Diaria
 
 on:
   schedule:
-    # Programado para 10:45 UTC (07:45 Brasília) para compensar atrasos
-    - cron: '45 10 * * *' 
-  workflow_dispatch: 
+    - cron: '0 11 * * *' # Roda todo dia às 08:00 (Horário de Brasília)
+  workflow_dispatch: # Permite que você rode manualmente quando quiser
 
 jobs:
   build:
@@ -13,21 +12,21 @@ jobs:
       contents: write
     steps:
       - name: Checkout do código
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Configurar Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: '3.12'
 
       - name: Instalar dependencias
-        run: pip install requests beautifulsoup4 pandas
+        run: pip install requests beautifulsoup4 pandas openpyxl
 
       - name: Executar script
-        run: python script.py  # <--- CONFIRME O NOME DO SEU ARQUIVO AQUI
+        run: python script.py
 
       - name: Salvar alteracoes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "Atualização automática da planilha"
+          commit_message: "Atualização automática CSV"
           file_pattern: "noticias_receita.csv"
